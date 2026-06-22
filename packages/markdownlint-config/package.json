@@ -2,7 +2,25 @@
   "name": "xyy-markdownlint-config",
   "version": "0.0.0",
   "description": "markdown 文档规范",
-  "keywords": ["markdown", "lint"],
+  "keywords": [
+    "markdown",
+    "lint"
+  ],
   "author": "xuyunyun",
-  "main": "index.json"
+  "main": "index.json",
+  "homepage": "https://github.com/xyy13426133590/fe-spec-pr#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyy13426133590/fe-spec-pr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
+  },
+  "peerDependencies": {
+    "markdownlint": "^0.41.0"
+  },
+  "devDependencies": {
+    "markdownlint": "^0.41.0"
+  }
 }

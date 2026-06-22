@@ -9,6 +9,14 @@
   ],
   "author": "xuyunyun",
   "license": "ISC",
+  "homepage": "https://github.com/xyy13426133590/fe-spec-pr#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyy13426133590/fe-spec-pr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
+  },
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   }
