@@ -4,13 +4,13 @@
 set -e
 
 
-push_addr=`git remote get_url --push origin`
+push_addr=`git remote get-url --push origin`
 commit_info=`git describe --all --always --long`
-dist_path=docx/.vuepress/dist
-push_branch=gh_pages
+dist_path=docs/.vuepress/dist
+push_branch=gh-pages
 
 # 生成静态文件
-npm run docs:build
+pnpm run docs:build
 
 # 进入生成的文件夹
 cd $dist_path

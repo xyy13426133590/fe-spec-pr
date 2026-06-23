@@ -11,6 +11,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
+    "init": "pnpm install",
     "lint": "markdownlint README.md",
     "clean": "lerna clean && rm -rf node_modules",
     "test": "lerna run test",
