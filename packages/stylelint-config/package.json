@@ -1,6 +1,6 @@
 {
   "name": "xyy-stylelint-config",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "css 文档规范",
   "author": "xuyunyun",
   "main": "index.js",
