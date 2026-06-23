@@ -1,0 +1,28 @@
+{
+  "name": "xyy-stylelint-config",
+  "version": "0.0.1",
+  "description": "css 文档规范",
+  "author": "xuyunyun",
+  "main": "index.js",
+  "keywords": [
+    "style",
+    "lint"
+  ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "homepage": "https://github.com/xyy13426133590/fe-spec-pr#readme",
+  "bugs": {
+    "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyy13426133590/fe-spec-pr.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "stylelint": "^17.13.0",
+    "stylelint-scss": "^7.2.0"
+  }
+}
