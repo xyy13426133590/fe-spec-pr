@@ -17,7 +17,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "publish": "lerna publish",
+    "release": "lerna publish",
+    "publish:retry": "lerna publish from-package",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "publishConfig": {
