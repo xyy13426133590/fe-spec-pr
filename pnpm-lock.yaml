@@ -93,6 +93,22 @@ importers:
         specifier: ^7.3.0
         version: 7.11.0(eslint@8.57.1)
 
+  packages/eslint-plugin:
+    dependencies:
+      fs-extra:
+        specifier: ^11.3.5
+        version: 11.3.5
+      require-all:
+        specifier: ^3.0.0
+        version: 3.0.0
+    devDependencies:
+      eslint:
+        specifier: ^8.7.0
+        version: 8.57.1
+      jest:
+        specifier: ^30.4.2
+        version: 30.4.2(@types/node@26.0.0)(node-notifier@8.0.2)
+
   packages/markdownlint-config:
     devDependencies:
       markdownlint:
@@ -103,7 +119,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^30.4.2
-        version: 30.4.2(@types/node@26.0.0)
+        version: 30.4.2(@types/node@26.0.0)(node-notifier@8.0.2)
       stylelint:
         specifier: ^17.13.0
         version: 17.13.0(typescript@5.9.3)
@@ -4397,6 +4413,9 @@ packages:
     resolution: {integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==}
     engines: {node: '>=4.x'}
 
+  growly@1.3.0:
+    resolution: {integrity: sha512-+xGQY0YyAWCnqy7Cd++hc2JqMYzlm0dG30Jd0beaA64sROr8C4nt8Yc9V5Ro3avlSUDTN0ulqP/VBKi1/lLygw==}
+
   handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
@@ -6044,6 +6063,9 @@ packages:
   node-libs-browser@2.2.1:
     resolution: {integrity: sha512-h/zcD8H9kaDZ9ALUWwlBUDo6TKF8a7qBSCSEGfjTVIYeqsioSKaAX+BN7NgiMGp6iSIXZ3PxgCu8KS3b71YK5Q==}
 
+  node-notifier@8.0.2:
+    resolution: {integrity: sha512-oJP/9NAdd9+x2Q+rfphB2RJCHjod70RcRLjosiPMMu5gjIfwVnOUGq2nbTjTUbmy0DJ/tFIVT30+Qe3nzl4TJg==}
+
   node-releases@2.0.48:
     resolution: {integrity: sha512-1uz8041X6LoI6ZSdZacM9lVY28vuzDlSKitnpbSNK0RfKoIJkX29NBPVEFXhnuSuEOA9Ww0xnPJ+ILWbGAv8DA==}
     engines: {node: '>=18'}
@@ -7020,6 +7042,10 @@ packages:
     engines: {node: '>= 6'}
     deprecated: request has been deprecated, see https://github.com/request/request/issues/3142
 
+  require-all@3.0.0:
+    resolution: {integrity: sha512-jPGN876lc5exWYrMcgZSd7U42P0PmVQzxnQB13fCSzmyGnqQWW4WUz5DosZ/qe24hz+5o9lSvW2epBNZ1xa6Fw==}
+    engines: {node: '>= 0.8'}
+
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -7261,6 +7287,9 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  shellwords@0.1.1:
+    resolution: {integrity: sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==}
 
   side-channel-list@1.0.1:
     resolution: {integrity: sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==}
@@ -9526,11 +9555,11 @@ snapshots:
       jest-util: 30.4.1
       slash: 3.0.0
 
-  '@jest/core@30.4.2':
+  '@jest/core@30.4.2(node-notifier@8.0.2)':
     dependencies:
       '@jest/console': 30.4.1
       '@jest/pattern': 30.4.0
-      '@jest/reporters': 30.4.1
+      '@jest/reporters': 30.4.1(node-notifier@8.0.2)
       '@jest/test-result': 30.4.1
       '@jest/transform': 30.4.1
       '@jest/types': 30.4.1
@@ -9556,6 +9585,8 @@ snapshots:
       jest-watcher: 30.4.1
       pretty-format: 30.4.1
       slash: 3.0.0
+    optionalDependencies:
+      node-notifier: 8.0.2
     transitivePeerDependencies:
       - babel-plugin-macros
       - esbuild-register
@@ -9609,7 +9640,7 @@ snapshots:
       '@types/node': 26.0.0
       jest-regex-util: 30.4.0
 
-  '@jest/reporters@30.4.1':
+  '@jest/reporters@30.4.1(node-notifier@8.0.2)':
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
       '@jest/console': 30.4.1
@@ -9634,6 +9665,8 @@ snapshots:
       slash: 3.0.0
       string-length: 4.0.2
       v8-to-istanbul: 9.3.0
+    optionalDependencies:
+      node-notifier: 8.0.2
     transitivePeerDependencies:
       - supports-color
 
@@ -13772,6 +13805,9 @@ snapshots:
 
   growl@1.10.5: {}
 
+  growly@1.3.0:
+    optional: true
+
   handle-thing@2.0.1: {}
 
   handlebars@4.7.9:
@@ -14533,9 +14569,9 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@30.4.2(@types/node@26.0.0):
+  jest-cli@30.4.2(@types/node@26.0.0)(node-notifier@8.0.2):
     dependencies:
-      '@jest/core': 30.4.2
+      '@jest/core': 30.4.2(node-notifier@8.0.2)
       '@jest/test-result': 30.4.1
       '@jest/types': 30.4.1
       chalk: 4.1.2
@@ -14545,6 +14581,8 @@ snapshots:
       jest-util: 30.4.1
       jest-validate: 30.4.1
       yargs: 17.7.2
+    optionalDependencies:
+      node-notifier: 8.0.2
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -14799,12 +14837,14 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@30.4.2(@types/node@26.0.0):
+  jest@30.4.2(@types/node@26.0.0)(node-notifier@8.0.2):
     dependencies:
-      '@jest/core': 30.4.2
+      '@jest/core': 30.4.2(node-notifier@8.0.2)
       '@jest/types': 30.4.1
       import-local: 3.2.0
-      jest-cli: 30.4.2(@types/node@26.0.0)
+      jest-cli: 30.4.2(@types/node@26.0.0)(node-notifier@8.0.2)
+    optionalDependencies:
+      node-notifier: 8.0.2
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -15819,6 +15859,16 @@ snapshots:
       url: 0.11.4
       util: 0.11.1
       vm-browserify: 1.1.2
+
+  node-notifier@8.0.2:
+    dependencies:
+      growly: 1.3.0
+      is-wsl: 2.2.0
+      semver: 7.7.4
+      shellwords: 0.1.1
+      uuid: 8.3.2
+      which: 2.0.2
+    optional: true
 
   node-releases@2.0.48: {}
 
@@ -17061,6 +17111,8 @@ snapshots:
       tunnel-agent: 0.6.0
       uuid: 3.4.0
 
+  require-all@3.0.0: {}
+
   require-directory@2.1.1: {}
 
   require-from-string@2.0.2: {}
@@ -17320,6 +17372,9 @@ snapshots:
   shebang-regex@1.0.0: {}
 
   shebang-regex@3.0.0: {}
+
+  shellwords@0.1.1:
+    optional: true
 
   side-channel-list@1.0.1:
     dependencies:

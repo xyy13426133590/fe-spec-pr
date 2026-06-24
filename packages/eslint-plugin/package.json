@@ -1,0 +1,38 @@
+{
+  "name": "xyy-eslint-plugin",
+  "version": "1.0.0",
+  "description": "自定义eslint插件",
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm run test"
+  },
+  "files": [
+    "configs/",
+    "rules/",
+    "README.md"
+  ],
+  "keywords": [
+    "xyy",
+    "eslint",
+    "eslint-plugin"
+  ],
+  "main": "index.js",
+  "author": "xuyunyun",
+  "homepage": "https://github.com/xyy13426133590/fe-spec-pr#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyy13426133590/fe-spec-pr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "jest": "^30.4.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.5",
+    "require-all": "^3.0.0"
+  }
+}
