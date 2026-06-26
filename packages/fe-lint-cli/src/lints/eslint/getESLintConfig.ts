@@ -1,7 +1,7 @@
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-25 20:07:18
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-25 20:34:26
  * @FilePath: /fe-spec-pr/packages/fe-lint-cli/src/lints/eslint/getESLintConfig.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -31,8 +31,8 @@ export function getESLintConfig(opts: ScanOptions, pkg: PKG, config: Config): ES
         errorOnUnmatchedPattern: false,
     };
     if (config.eslintOptions) {
-        // 若用户传入了eslintOptions，则用用户的
-        Object.assign(lintConfig, config.eslintOptions);
+        // 若用户传入了eslintOptions，则用用户的（fix 始终以 opts.fix 为准）
+        Object.assign(lintConfig, config.eslintOptions, { fix });
     } else {
         // 根据扫描目录下有无lintrc文件，若无则使用默认的lint配置
         const lintConfigFiles = globSync('.eslintrc?(.@(js|yaml|yml|json))', { cwd });

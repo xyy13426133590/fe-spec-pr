@@ -17,6 +17,10 @@
   "bugs": {
     "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
   },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },

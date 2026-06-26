@@ -1,7 +1,7 @@
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-24 10:57:29
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-24 10:59:51
  * @FilePath: /fe-spec-pr/packages/eslint-plugin/test/no-broad-semantic-versioning.test.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -16,7 +16,7 @@ ruleTester.run('no-broad-semantic-versioning', rule, {
     {
       filename: 'package.json',
       code: `module.exports = ${JSON.stringify({
-        devDependencies: { 'encode-fe-eslint-plugin': '^0.0.5' },
+        devDependencies: { 'xyy-eslint-plugin': '^0.0.5' },
       })}`,
     },
     {
@@ -29,11 +29,11 @@ ruleTester.run('no-broad-semantic-versioning', rule, {
     {
       filename: 'package.json',
       code: `module.exports = ${JSON.stringify({
-        devDependencies: { 'encode-fe-eslint-plugin': '*' },
+        devDependencies: { 'xyy-eslint-plugin': '*' },
       })}`,
       errors: [
         {
-          message: 'The "encode-fe-eslint-plugin" is not recommended to use "*"',
+          message: 'The "xyy-eslint-plugin" is not recommended to use "*"',
         },
       ],
     },

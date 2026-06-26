@@ -8,6 +8,10 @@
     "style",
     "lint"
   ],
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },

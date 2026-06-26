@@ -1,7 +1,7 @@
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-24 21:23:08
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-25 15:13:27
  * @FilePath: /fe-spec-pr/packages/lint-cli/src/types.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -9,7 +9,7 @@
  */
 import { ESLint } from 'eslint';
 import type { LintResults as MarkdownlintLintResults, Options as MarkdownlintOptions } from 'markdownlint';
-import type stylelint from 'stylelint';
+import type { LintResult as StylelintLintResult, LinterOptions as StylelintLinterOptions } from 'stylelint';
 
 /**
  * package.json 的简化类型
@@ -18,9 +18,7 @@ import type stylelint from 'stylelint';
 export interface PKG {
     name?: string;
     scripts?: Record<string, string>;
-    husky?: {
-        hooks?: Record<string, string>;
-    },
+    husky?: Record<string, unknown>;
     dependencies?: Record<string, string>;
     devDependencies?: Record<string, string>;
     eslintConfig?: unknown;
@@ -68,7 +66,7 @@ export interface Config {
     // ESLint 配置项（eslintrc 老 API）
     eslintOptions?: ESLint.LegacyOptions;
     // stylelint 配置项
-    stylelintOptions?: stylelint.LinterOptions;
+    stylelintOptions?: StylelintLinterOptions;
     // markdownlint 配置项
     markdownlintOptions?: MarkdownlintOptions;
 }
@@ -116,13 +114,13 @@ export interface ScanReport {
 export interface IGetLintConfig {
   (options: ScanOptions, pkg: PKG, config: Config): ESLint.LegacyOptions;
 
-  (options: ScanOptions, pkg: PKG, config: Config): stylelint.LinterOptions;
+  (options: ScanOptions, pkg: PKG, config: Config): StylelintLinterOptions;
 
   (options: ScanOptions, pkg: PKG, config: Config): MarkdownlintOptions;
 }
 
 export interface IFormatResults {
   (results: ESLint.LintResult[], quiet: boolean): ScanResult[];
-  (results: stylelint.LintResult[], quiet: boolean): ScanResult[];
+  (results: StylelintLintResult[], quiet: boolean): ScanResult[];
   (results: MarkdownlintLintResults, quiet: boolean): ScanResult[];
 }

@@ -1,7 +1,7 @@
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-25 12:24:12
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-25 14:29:05
  * @FilePath: /fe-spec-pr/packages/fe-lint-cli/src/actions/init.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -25,7 +25,7 @@ let step = 0;
  * */ 
 const chooseEslintType = async (): Promise<string> => {
     const { type } = await inquirer.prompt({
-        type: 'select',
+        type: 'list',
         name: 'type',
         message: `Step ${++step}. 请选择项目语言（JS/TS）和框架（React/Vue）类型`,
         choices: PROJECT_TYPES
@@ -136,7 +136,7 @@ export default  async (options: InitOptions) => {
             log.info(`Step ${++step}. 安装依赖`);
             const npm = await npmType;
             spawn.sync(npm, ['i', '-D', PKG_NAME], { stdio: 'inherit', cwd });
-            log.success(`Step ${step}. 依赖安装完成: D`);
+            log.success(`Step ${step}. 依赖安装完成`);
         }
     }
 
@@ -144,17 +144,34 @@ export default  async (options: InitOptions) => {
     pkg = fs.readJSONSync(pkgPath);
     // 在 package.json 中写入 scripts
     pkg.scripts = pkg.scripts || {};
-    pkg.scripts[`${PKG_NAME}-scan`] =  `${PKG_NAME} scan`;
-    pkg.scripts[`${PKG_NAME}-fix`] =  `${PKG_NAME} fix`;
+    pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
+    pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
+    // Husky 9 需要 prepare 脚本来初始化钩子
+    if (!pkg.scripts.prepare) {
+        pkg.scripts.prepare = 'husky';
+    }
 
-    // git commit 卡点
-    pkg.husky = pkg.husky || {};
-    pkg.husky.hooks = pkg.husky.hooks || {};
-    pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
-    pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
+    // 清理旧版 Husky v3 写法（兼容迁移）
+    if (pkg.husky) {
+        delete pkg.husky;
+    }
 
     fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
-    log.success(`Step ${step}. 配置 git commit 卡点成功 :D`);
+
+    // git commit 卡点 —— Husky 9 写法：生成 .husky/ 钩子文件
+    log.info(`Step ${++step}. 配置 git commit 卡点（Husky 9）`);
+    const huskyDir = path.resolve(cwd, '.husky');
+    fs.ensureDirSync(huskyDir);
+
+    const preCommitPath = path.resolve(huskyDir, 'pre-commit');
+    fs.writeFileSync(preCommitPath, `${PKG_NAME} commit-file-scan\n`, 'utf-8');
+    fs.chmodSync(preCommitPath, '755');
+
+    const commitMsgPath = path.resolve(huskyDir, 'commit-msg');
+    fs.writeFileSync(commitMsgPath, `${PKG_NAME} commit-msg-scan "$1"\n`, 'utf-8');
+    fs.chmodSync(commitMsgPath, '755');
+
+    log.success(`Step ${step}. 配置 git commit 卡点成功`);
 
     log.info(`Step ${++step}. 生成配置文件`);
     generateTemplate(cwd, config);

@@ -1,7 +1,7 @@
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-24 21:52:09
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-25 15:16:27
  * @FilePath: /fe-spec-pr/packages/fe-lint-cli/src/utils/constants.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -83,7 +83,7 @@ export const ESLINT_IGNORE_PATTERN: string[] = [
     'lib',
     '**/*.min.js',
     '**/*-min.js',
-    '88/*.bundle.js'
+    '**/*.bundle.js'
 ];
 
 // stylelint 扫描文件扩展名
@@ -99,7 +99,7 @@ export const STYLELINT_IGNORE_PATTERN: string[] = [
     'lib/',
     '**/*.min.css',
     '**/*-min.css',
-    '88/*.bundle.css'
+    '**/*.bundle.css'
 ];
 
 // markdownLint 扫描文件扩展名

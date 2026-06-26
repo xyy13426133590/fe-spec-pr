@@ -21,7 +21,8 @@
   "license": "ISC",
   "files": [
     "bin/",
-    "lib/"
+    "lib/",
+    "README.md"
   ],
   "engines": {
     "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
@@ -60,24 +61,24 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.5",
     "glob": "^13.0.6",
-    "husky": "^3.1.0",
-    "inquirer": "^14.0.2",
+    "husky": "^9.1.7",
+    "inquirer": "^7.3.3",
     "is-docker": "^2.1.1",
     "lodash": "^4.18.1",
     "markdownlint": "^0.41.0",
     "markdownlint-rule-helpers": "^0.13.0",
-    "ora": "^9.4.1",
+    "ora": "^5.4.1",
     "prettier": "^2.2.1",
     "strip-ansi": "^6.0.0",
     "stylelint": "^17.13.0",
-    "stylelint-scss": "^4.1.0",
+    "stylelint-scss": "^7.2.0",
     "terminal-link": "^2.1.1",
     "text-table": "^0.2.0",
     "vue-eslint-parser": "^7.3.0",
-    "xyy-commitlint-config": "0.0.6",
-    "xyy-eslint-config": "0.0.6",
-    "xyy-markdownlint-config": "0.0.6",
-    "xyy-stylelint-config": "0.0.6"
+    "xyy-commitlint-config": "workspace:*",
+    "xyy-eslint-config": "workspace:*",
+    "xyy-markdownlint-config": "workspace:*",
+    "xyy-stylelint-config": "workspace:*"
   },
   "devDependencies": {
     "@types/command-exists": "^1.2.3",
@@ -86,7 +87,7 @@
     "@types/eslint": "^9.6.1",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.24",
-    "@types/node": "^26.0.0",
+    "@types/node": "^20.17.0",
     "@types/prettier": "^3.0.0",
     "@types/stylelint": "^14.0.0",
     "@types/text-table": "^0.2.2",

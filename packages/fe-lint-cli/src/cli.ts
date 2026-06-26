@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /*
- * @Author: 许云云 
+ * @Author: xuyunyun 
  * @Date: 2026-06-25 13:56:33
- * @LastEditors: 许云云 
+ * @LastEditors: xuyunyun 
  * @LastEditTime: 2026-06-25 22:10:04
  * @FilePath: /fe-spec-pr/packages/fe-lint-cli/src/cli.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
@@ -120,8 +120,11 @@ program
 
 program
     .command('commit-msg-scan')
-    .action(() => {
-        const r = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], { stdio: 'inherit' });
+    .argument('[msgPath]', 'Git commit message 文件路径（由 Husky 钩子传入 $1）')
+    .action((msgPath: string) => {
+        // Husky 9 通过 $1 传入 commit message 文件路径（通常为 .git/COMMIT_EDITMSG）
+        const editPath = msgPath || process.env.HUSKY_GIT_PARAMS || '.git/COMMIT_EDITMSG';
+        const r = spawn.sync('commitlint', ['--edit', editPath], { stdio: 'inherit' });
         if (r.status !== 0) process.exit(r.status || 1);
     });
 

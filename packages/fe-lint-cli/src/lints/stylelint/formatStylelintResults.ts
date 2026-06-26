@@ -1,4 +1,4 @@
-import type stylelint from 'stylelint';
+import type { LintResult } from 'stylelint';
 import type { ScanResult } from '../../types';
 import { getStylelintRuleDocUrl } from './getStylelintDocUrl';
 
@@ -6,7 +6,7 @@ import { getStylelintRuleDocUrl } from './getStylelintDocUrl';
  * 格式化 Stylelint 输出结果
  */
 export function formatStylelintResults(
-  results: stylelint.LintResult[],
+  results: LintResult[],
   quiet: boolean,
 ): ScanResult[] {
   return results.map(({ source, warnings }) => {

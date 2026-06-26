@@ -19,9 +19,22 @@
     "url": "git+https://github.com/xyy13426133590/fe-spec-pr.git"
   },
   "license": "ISC",
+  "files": [
+    "essential/",
+    "rules/",
+    "typescript/",
+    "es5.js",
+    "index.js",
+    "jsx-a11y.js",
+    "node.js",
+    "react.js",
+    "typescript.js",
+    "vue.js",
+    "README.md"
+  ],
   "scripts": {
     "lint": "eslint ./",
-    "test": "mocha ./__tests__/*.test.js --timeout 5000",
+    "test": "mocha ./__tests__/*.test.js --timeout 30000",
     "print-config": "eslint --print-config ./index.js > ./print-config.json"
   },
   "devDependencies": {

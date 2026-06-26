@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import { globSync } from 'glob';
 import path from 'path';
-import type stylelint from 'stylelint';
+import type { LinterOptions } from 'stylelint';
 import type { Config, PKG, ScanOptions } from '../../types';
 import { STYLELINT_IGNORE_PATTERN } from '../../utils/constants';
 
@@ -12,11 +12,11 @@ export function getStylelintConfig(
   opts: ScanOptions,
   pkg: PKG,
   config: Config,
-): stylelint.LinterOptions {
+): LinterOptions {
   const { cwd, fix } = opts;
   if (config.enableStylelint === false) return {};
 
-  const lintConfig: stylelint.LinterOptions = {
+  const lintConfig: LinterOptions = {
     fix: Boolean(fix),
     allowEmptyInput: true,
   };
