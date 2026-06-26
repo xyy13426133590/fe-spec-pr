@@ -18,7 +18,7 @@ npm install  @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-	extends: ['./packages/commitlint-config/index.js'],
+	extends: ['xyy-commitlint-config'],
 };
 ```
 

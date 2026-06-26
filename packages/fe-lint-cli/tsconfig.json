@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./lib",
+        "target": "es5",
+        "module": "commonjs",
+        "esModuleInterop": true, // 允许 CommonJS 模块与 ES6 模块互操作
+        "removeComments": true, // 移除注释
+        "resolveJsonModule": true, // 允许导入 JSON 模块
+        "declaration": true,  // 生成声明文件 .d.ts
+        "downlevelIteration": true, // 允许在 ES5 中使用迭代器
+        "types": ["node"]  // 指定要包含的类型定义文件
+    },
+    "include": ["src"] // 编译 src 目录下的所有 TypeScript 文件
+}

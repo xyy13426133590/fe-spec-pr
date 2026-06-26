@@ -24,7 +24,7 @@ npm i -D encode-fe-eslint-config @babel/core @babel/eslint-parser eslint-plugin-
 
 ```json
 {
-  "extends": ["encode-fe-eslint-config"]
+  "extends": ["xyy-eslint-config"]
 }
 ```
 

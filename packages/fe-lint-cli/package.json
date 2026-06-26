@@ -1,0 +1,97 @@
+{
+  "name": "fe-lint-cli",
+  "version": "1.0.0",
+  "description": "前端编码规范工程化脚手架",
+  "bin": "./lib/cli.js",
+  "main": "./lib/index.js",
+  "scripts": {
+    "dev": "npm run copyfiles && tsc -w",
+    "build": "rm -rf lib && npm run copyfiles && tsc",
+    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
+    "test": "npm run build && jest",
+    "coverage": "nyc jest --silent --forceExit",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "xyy",
+    "lint",
+    "cli"
+  ],
+  "author": "xuyunyun",
+  "license": "ISC",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  },
+  "homepage": "https://github.com/xyy13426133590/fe-spec-pr#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xyy13426133590/fe-spec-pr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyy13426133590/fe-spec-pr/issues"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-react": "^7.16.0",
+    "@commitlint/cli": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "chalk": "^4.1.0",
+    "command-exists": "^1.2.9",
+    "commander": "^15.0.0",
+    "cross-spawn": "^7.0.6",
+    "ejs": "^6.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-egg": "^10.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-vue": "^7.3.0",
+    "execa": "^9.6.1",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.5",
+    "glob": "^13.0.6",
+    "husky": "^3.1.0",
+    "inquirer": "^14.0.2",
+    "is-docker": "^2.1.1",
+    "lodash": "^4.18.1",
+    "markdownlint": "^0.41.0",
+    "markdownlint-rule-helpers": "^0.13.0",
+    "ora": "^9.4.1",
+    "prettier": "^2.2.1",
+    "strip-ansi": "^6.0.0",
+    "stylelint": "^17.13.0",
+    "stylelint-scss": "^4.1.0",
+    "terminal-link": "^2.1.1",
+    "text-table": "^0.2.0",
+    "vue-eslint-parser": "^7.3.0",
+    "xyy-commitlint-config": "workspace:*",
+    "xyy-eslint-config": "workspace:*",
+    "xyy-markdownlint-config": "workspace:*",
+    "xyy-stylelint-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/command-exists": "^1.2.3",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/ejs": "^3.1.5",
+    "@types/eslint": "^9.6.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.24",
+    "@types/node": "^26.0.0",
+    "@types/prettier": "^3.0.0",
+    "@types/stylelint": "^14.0.0",
+    "@types/text-table": "^0.2.2",
+    "copyfiles": "^2.4.1",
+    "jest": "^30.4.2",
+    "nyc": "^18.0.0",
+    "typescript": "^4.9.5"
+  }
+}

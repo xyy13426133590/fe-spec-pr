@@ -17,6 +17,6 @@ npm install markdownlint --save-dev
 
 ```json
 {
-    "extends": "./packages/markdownlint-config/index.json"
+    "extends": "xyy-markdownlint-config"
 }
 ```
