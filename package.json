@@ -10,7 +10,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
+    "prepare": "husky",
     "init": "pnpm install",
     "lint": "markdownlint README.md",
     "clean": "lerna clean && rm -rf node_modules",
