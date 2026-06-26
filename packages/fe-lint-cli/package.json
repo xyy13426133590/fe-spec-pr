@@ -2,7 +2,7 @@
   "name": "fe-lint-cli",
   "version": "0.0.6",
   "description": "前端编码规范工程化脚手架",
-  "bin": "./lib/cli.js",
+  "bin": "./bin/fe-lint-cli.js",
   "main": "./lib/index.js",
   "scripts": {
     "dev": "npm run copyfiles && tsc -w",
@@ -20,6 +20,7 @@
   "author": "xuyunyun",
   "license": "ISC",
   "files": [
+    "bin/",
     "lib/"
   ],
   "engines": {
@@ -73,10 +74,10 @@
     "terminal-link": "^2.1.1",
     "text-table": "^0.2.0",
     "vue-eslint-parser": "^7.3.0",
-    "xyy-commitlint-config": "workspace:*",
-    "xyy-eslint-config": "workspace:*",
-    "xyy-markdownlint-config": "workspace:*",
-    "xyy-stylelint-config": "workspace:*"
+    "xyy-commitlint-config": "0.0.6",
+    "xyy-eslint-config": "0.0.6",
+    "xyy-markdownlint-config": "0.0.6",
+    "xyy-stylelint-config": "0.0.6"
   },
   "devDependencies": {
     "@types/command-exists": "^1.2.3",
@@ -93,5 +94,6 @@
     "jest": "^30.4.2",
     "nyc": "^18.0.0",
     "typescript": "^4.9.5"
-  }
+  },
+  "gitHead": "1a37aec19545c8cd6869096cec5bc1eda6c6abe8"
 }
