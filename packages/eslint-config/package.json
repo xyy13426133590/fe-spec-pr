@@ -1,6 +1,6 @@
 {
   "name": "xyy-eslint-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "JavaScript TypeScript Node 文档规范",
   "author": "xuyunyun",
   "main": "index.js",
